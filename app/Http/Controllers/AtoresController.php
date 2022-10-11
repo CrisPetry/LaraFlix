@@ -15,13 +15,33 @@ class AtoresController extends Controller
         return view('atores.index', ['atores' => $atores]);
     }
 
-    public function create(){
+    public function create()
+    {
         return view('atores.create');
     }
 
-    public function store(AtorRequest $request){
+    public function store(AtorRequest $request)
+    {
         $ator = $request->all();
         Ator::create($ator);
-        return redirect('atores');
+        return redirect()->route('atores');
+    }
+
+    public function destroy($id)
+    {
+        Ator::find($id)->delete();
+        return redirect()->route('atores');
+    }
+
+    public function edit($id)
+    {
+        $ator = Ator::find($id);
+        return view('atores.edit', compact('ator'));
+    }
+
+    public function update(AtorRequest $request, $id)
+    {
+        Ator::find($id)->update($request->all());
+        return redirect()->route('atores');
     }
 }

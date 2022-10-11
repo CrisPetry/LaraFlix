@@ -302,12 +302,18 @@ return [
         ],
 
         // Sidebar items:
-        
+
         ['header' => 'ATORES'],
         [
             'text' => 'Listagem',
             'url'  => 'http://127.0.0.1:8000/atores',
             'icon' => 'fas fa-fw fa-users',
+        ],
+
+        [
+            'text' => 'Cadastrar ator',
+            'url'  => 'http://127.0.0.1:8000/atores/create',
+            'icon' => 'fas fa-user-plus',
         ],
     ],
 

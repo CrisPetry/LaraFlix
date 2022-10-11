@@ -15,27 +15,24 @@ use Carbon\Carbon;
         </ul>
     @endif
 
-    {!! Form::open(['url' => 'atores/store']) !!}
+    {!! Form::open(['route' => 'atores.store']) !!}
 
     <div class="class form-group">
         {!! Form::label('nome', 'Nome') !!}
         {!! Form::text('nome', null, ['class' => 'form-control', 'required']) !!}
     </div>
 
-    <div class="class form-group">
+    <div class="form-group">
         {!! Form::label('nacionalidade', 'Nacionalidade') !!}
         {!! Form::select(
             'nacionalidade',
-            [
-                'Brasileiro' => 'Brasileiro',
-                'Americano' => 'Americano',
-                'Canadense' => 'Canadense',
-                'Argentino' => 'Argentino',
-            ],
+            ['Brasileiro' => 'Brasileiro', 'Americano' => 'Americano', 
+            'Canadense' => 'Canadense', 'Argentino' => 'Argentino'],
             'Brasileiro',
             ['class' => 'form-control', 'required'],
         ) !!}
     </div>
+
 
     <div class="class form-group">
         {!! Form::label('dt_nascimento', 'Data de Nascimento') !!}
