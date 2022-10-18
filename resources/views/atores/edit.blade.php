@@ -19,13 +19,12 @@
     </div>
 
     <div class="form-group">
-        {!! Form::label('nacionalidade', 'Nacionalidade') !!}
+        {!! Form::label('nacionalidade_id', 'Nacionalidade') !!}
         {!! Form::select(
-            'nacionalidade',
-            ['Brasileiro' => 'Brasileiro', 'Americano' => 'Americano', 'Canadense' => 'Canadense', 'Argentino' => 'Argentino'],
-            $ator->nacionalidade,
-            ['class' => 'form-control', 'required'],
-        ) !!}
+            'nacionalidade_id',
+            \App\Models\Nacionalidade::orderBy('descricao')->pluck('descricao', 'id')->toArray(),
+            $ator->nacionalidade_id,
+            ['class' => 'form-control', 'required']) !!}
     </div>
 
     <div class="form-group">

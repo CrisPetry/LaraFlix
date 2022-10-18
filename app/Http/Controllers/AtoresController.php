@@ -11,7 +11,7 @@ class AtoresController extends Controller
 
     public function index()
     {
-        $atores = Ator::All();
+        $atores = Ator::orderBy('nome')->paginate(2);
         return view('atores.index', ['atores' => $atores]);
     }
 
